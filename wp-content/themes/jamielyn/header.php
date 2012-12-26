@@ -35,9 +35,10 @@ if ($redirect)
   <link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/symbolset.css" type="text/css" />
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
   <link href='http://fonts.googleapis.com/css?family=Neuton:400,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/script.js"></script>
   <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/symbolset.js"></script>
+  <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/jquery.cycle2.min.js"></script>
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -45,29 +46,30 @@ if ($redirect)
     
 <body class="body-<?php the_ID(); ?>">
   <section id="container" class="container-fluid">
-    <header class="row-fluid">
-      <div class="span5 logo">
-        <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
-        <small><?php bloginfo('description'); ?></small>
-      </div>
-      <div class="span7 navigation">
-        <nav id="menu" class="clearfix">
-          <?php wp_nav_menu(array( 
-            'theme_location'  => 'menu-1',
-            'menu'            => '', 
-            'container'       => false,
-            'menu_class'      => 'menu row-fluid', 
-            'echo'            => true,
-            'fallback_cb'     => 'wp_page_menu',
-            'before'          => '',
-            'after'           => '',
-            'link_before'     => '',
-            'link_after'      => '',
-            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-            'depth'           => 0,
-            'walker'          => ''
-          )); ?>
-        </nav>
+    <header>
+      <div class="row-fluid max960">
+        <div class="span5 logo">
+          <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
+        </div>
+        <div class="span7 navigation">
+          <nav id="menu" class="clearfix">
+            <?php wp_nav_menu(array( 
+              'theme_location'  => 'menu-1',
+              'menu'            => '', 
+              'container'       => false,
+              'menu_class'      => 'menu row-fluid', 
+              'echo'            => true,
+              'fallback_cb'     => 'wp_page_menu',
+              'before'          => '',
+              'after'           => '',
+              'link_before'     => '',
+              'link_after'      => '',
+              'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+              'depth'           => 0,
+              'walker'          => ''
+            )); ?>
+          </nav>
+        </div>
       </div>
     </header>
     <section id="content">

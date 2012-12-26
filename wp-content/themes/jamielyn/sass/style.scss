@@ -1,7 +1,7 @@
-$sans: 'Open Sans', Arial, Helvetica, sans-serif;
+$sans: 'Oswald', sans-serif;
 $serif: 'Neuton', serif;
-$blue: #2c71a8;
-$blue-gray: desaturate(lighten($blue, 5%), 35%);
+$green: #029483;
+$green-gray: desaturate(lighten($green, 5%), 35%);
 $white: #f7f7f7;
 $border: #e9e7e7;
 
@@ -30,14 +30,14 @@ $border: #e9e7e7;
 }
 
 /*  
-Theme Name: Crander
-Theme URI: http://cranderveldt.com
+Theme Name: Jamielyn
+Theme URI: http://jamielynsmith.com
 Description: Theme designed by Jamielyn Smith.
 Author: <a href="http://cranderveldt.com">Cranderveldt</a>   
 Author URI: http://cranderveldt.com
 Version: 1.0 
-License: Copyright (c) 2012 Cranderveldt
-License URI: http://cranderveldt.com
+License: Copyright (c) 2012 Jamielyn Smith
+License URI: http://jamielynsmith.com
 */
 /* Reset */
 html, body, div, span, applet, object, iframe,
@@ -104,16 +104,16 @@ footer,header,hgroup,menu,nav,section,summary {
 
 blockquote p { line-height: 2em; }
 a { 
-  color: $blue;
+  color: $green;
   text-decoration: none; 
   &:hover {
-    color: lighten($blue, 25%);
+    color: lighten($green, 25%);
     text-decoration: none;
   }
 }
 h1 { font-size: 36px; margin-bottom: 15px; font-family: $serif; }
 h2 { font-size: 28px; margin-bottom: 15px; font-family: $serif; }
-h3 { font-size: 24px; margin-bottom: 5px; font-family: $serif; }
+h3 { font-size: 24px; margin-bottom: 5px; }
 h4 { font-size: 20px; }
 h5 { font-size: 16px; text-transform: uppercase; margin-bottom: 5px; }
 h6 { font-size: 14px; }
@@ -128,28 +128,33 @@ body {
   font-size: 16px;
   line-height: 1.7;
 }
+.max960 {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.pad20 {
+  padding: 20px;
+}
 header {
-  background: $blue;
+  background: $green;
   color: white;
-  .logo {
-    padding: 17px 20px 20px;
-  }
-  .navigation {
-    padding: 50px 40px 20px 20px;
+  .max960 {
+    padding: 20px;
   }
   a {
-    color: white;
+    color: #464646;
     &:hover {
-      color: lighten($blue, 25%);
+      color: #111;
     }
   }
   h1 {
-    font-size: 55px;
+    font-family: $sans;
+    font-weight: normal;
+    font-size: 28px;
     margin: 0;
     line-height: 1;
     position: relative;
-    top: -5px;
-    text-shadow: 0 1px 2px darken($blue, 20%);
+    text-transform: uppercase;
     a:hover {
       color: white;
     }
@@ -162,6 +167,9 @@ header {
   }
   nav {
     ul li {
+      &.menu-item-14 {
+        display: none;
+      }
       a {
         text-transform: uppercase;
         font-weight: bold;
@@ -181,7 +189,7 @@ header {
         }
         span.title {
           position: absolute;
-          background: darken($blue, 15%);
+          background: darken($green, 15%);
           @include round(4px);
           padding: 5px;
           display: none;
@@ -198,7 +206,7 @@ header {
             bottom: -8px;
             border-left: 8px solid transparent;
             border-right: 8px solid transparent;
-            border-top: 8px solid darken($blue, 15%);;
+            border-top: 8px solid darken($green, 15%);;
             margin-left: -8px;
           }
         }
@@ -210,19 +218,18 @@ header {
   padding: 0;
 }
 #content {
-  padding: 20px;
   .entry {
     margin-bottom: 20px;
   }
   h2 {
     font-size: 30px;
-    color: $blue;
+    color: $green;
   }
   h5 {
-    color: $blue;
+    color: $green;
   }
   p {
-    color: $blue-gray;
+    color: $green-gray;
   }
   a.more {
     font-size: 14px;
@@ -266,14 +273,14 @@ header {
     }
     h1 {
       font-size: 45px;
-      color: $blue;
+      color: $green;
       font-weight: normal;
       letter-spacing: 1px;
       line-height: 1.3;
     }
   }
   .home-side {
-    color: $blue-gray;
+    color: $green-gray;
     padding: 20px 0 0 0;
     p {
       font-size: 16px;
@@ -284,14 +291,14 @@ header {
     margin: 0 -20px;
     padding: 20px;
     h2 {
-      color: $blue;
+      color: $green;
       font-size: 30px;
     }
     h5 {
-      color: $blue;
+      color: $green;
     }
     p {
-      color: $blue-gray;
+      color: $green-gray;
     }
   }
 }
@@ -299,8 +306,8 @@ footer {
   font-size: 12px;
   border-top: 1px solid #e3e1e1;
   padding-top: 20px;
-  &>div {
-    padding: 0 20px;
+  .max960 {
+    padding: 20px;
   }
 }
 /* Page specific stuff */
@@ -316,77 +323,5 @@ footer {
 }
 /* Responsive stuff */
 @media (max-width: 767px) {
-  header h1 {
-    font-size: 50px;
-  }
-  header small {
-    font-size: 12px;
-  }
-  header .navigation {
-    padding: 0 20px;
-    nav {
-      ul li {
-        a {
-          margin-bottom: 3px;
-          span.ss-icon {
-            font-size: 18px;
-            width: 5%;
-            top: 0;
-          }
-          span.title  {
-            display: block;
-            left: 10% !important;
-            width: 80%;
-            top: -7px;
-            font-size: 18px;
-            padding: 5px 5%;
-            margin: 0;
-            background: darken($blue, 8%);
-            &:after {
-              content: "";
-              position: absolute;
-              top: 50%;
-              width: 0;
-              height: 0;
-              left: -8px;
-              border-top: 8px solid transparent;
-              border-bottom: 8px solid transparent;
-              border-right: 8px solid darken($blue, 8%);;
-              margin-top: -8px;
-            }
-          }
-        }
-      }
-    }
-  }
-  #content .hero-unit {
-    border: 0;
-    padding: 20px 0 0;
-    h1 {
-      font-size: 30px;
-    }
-    &:before, &.after {
-      display: none;
-    }
-  }
-  #content .row-fluid > div {
-    margin-bottom: 20px;
-  }
-  .body-29 #content .row-fluid > div {
-    margin: 0;
-  }
-  footer p {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  #footer-nav {
-    width: 80%;
-    margin: 0 auto;
-    li {
-      float: left;
-      width: 12.5%;
-      text-align: center;
-      font-size: 20px;
-    }
-  }
+  
 }
