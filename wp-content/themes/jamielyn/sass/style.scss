@@ -1,0 +1,392 @@
+$sans: 'Open Sans', Arial, Helvetica, sans-serif;
+$serif: 'Neuton', serif;
+$blue: #2c71a8;
+$blue-gray: desaturate(lighten($blue, 5%), 35%);
+$white: #f7f7f7;
+$border: #e9e7e7;
+
+@mixin round($radius) {
+  -webkit-border-radius: $radius; 
+          border-radius: $radius;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+@mixin gradient($top, $bottom, $fallback: "imgs/fallback.png") {
+  background-color: $top;
+  background-image: url($fallback);
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($top), to($bottom)); 
+  background-image: -webkit-linear-gradient(top, $top, $bottom); 
+  background-image:    -moz-linear-gradient(top, $top, $bottom); 
+  background-image:      -o-linear-gradient(top, $top, $bottom); 
+  background-image:         linear-gradient(to bottom, $top, $bottom);
+}
+
+@mixin trans($type, $speed: 0.3s) {
+  -webkit-transition: $type $speed linear;
+     -moz-transition: $type $speed linear;
+       -o-transition: $type $speed linear;
+          transition: $type $speed linear;
+}
+
+/*  
+Theme Name: Crander
+Theme URI: http://cranderveldt.com
+Description: Theme designed by Jamielyn Smith.
+Author: <a href="http://cranderveldt.com">Cranderveldt</a>   
+Author URI: http://cranderveldt.com
+Version: 1.0 
+License: Copyright (c) 2012 Cranderveldt
+License URI: http://cranderveldt.com
+*/
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary { 
+  display:block;
+}
+/*End Reset*/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+blockquote p { line-height: 2em; }
+a { 
+  color: $blue;
+  text-decoration: none; 
+  &:hover {
+    color: lighten($blue, 25%);
+    text-decoration: none;
+  }
+}
+h1 { font-size: 36px; margin-bottom: 15px; font-family: $serif; }
+h2 { font-size: 28px; margin-bottom: 15px; font-family: $serif; }
+h3 { font-size: 24px; margin-bottom: 5px; font-family: $serif; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; text-transform: uppercase; margin-bottom: 5px; }
+h6 { font-size: 14px; }
+br { display: none; }
+span.ss-icon {
+  position: relative;
+}
+.comments, .post-edit-link { display: none; }
+body {
+  background: $white;
+  font-family: $sans;
+  font-size: 16px;
+  line-height: 1.7;
+}
+header {
+  background: $blue;
+  color: white;
+  .logo {
+    padding: 17px 20px 20px;
+  }
+  .navigation {
+    padding: 50px 40px 20px 20px;
+  }
+  a {
+    color: white;
+    &:hover {
+      color: lighten($blue, 25%);
+    }
+  }
+  h1 {
+    font-size: 55px;
+    margin: 0;
+    line-height: 1;
+    position: relative;
+    top: -5px;
+    text-shadow: 0 1px 2px darken($blue, 20%);
+    a:hover {
+      color: white;
+    }
+  }
+  small {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  nav {
+    ul li {
+      a {
+        text-transform: uppercase;
+        font-weight: bold;
+        display: block;
+        font-size: 14px;
+        position: relative;
+        &:hover {
+          color: #FFF;
+          span.title {
+            display: block;
+          }
+        }
+        span.ss-icon {
+          position: relative;
+          top: 3px;
+          font-size: 24px;
+        }
+        span.title {
+          position: absolute;
+          background: darken($blue, 15%);
+          @include round(4px);
+          padding: 5px;
+          display: none;
+          top: -40px;
+          left: -50%;
+          margin-left: 26px;
+          color: #FFF;
+          &:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 0;
+            height: 0;
+            bottom: -8px;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid darken($blue, 15%);;
+            margin-left: -8px;
+          }
+        }
+      }
+    }
+  }
+}
+#container {
+  padding: 0;
+}
+#content {
+  padding: 20px;
+  .entry {
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 30px;
+    color: $blue;
+  }
+  h5 {
+    color: $blue;
+  }
+  p {
+    color: $blue-gray;
+  }
+  a.more {
+    font-size: 14px;
+    span.ss-icon {
+      font-size: 8px;
+      top: 0;
+      margin-left: 4px;
+      @include trans(left, 0.1s);
+    }
+    &:hover span.ss-icon {
+      left: 4px;
+    }
+  }
+  .hero-unit {
+    padding: 0;
+    background: transparent;
+    border-right: 1px solid $border;
+    padding: 20px 20px 0 0;
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      width: 0;
+      height: 0;
+    }
+    &:before {
+      right: -12px;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 12px solid $border;
+      margin-top: -12px;
+    }
+    &:after {
+      right: -10px;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid white;
+      margin-top: -10px;
+    }
+    h1 {
+      font-size: 45px;
+      color: $blue;
+      font-weight: normal;
+      letter-spacing: 1px;
+      line-height: 1.3;
+    }
+  }
+  .home-side {
+    color: $blue-gray;
+    padding: 20px 0 0 0;
+    p {
+      font-size: 16px;
+    }
+  }
+  .recent-projects {
+    background: $white;
+    margin: 0 -20px;
+    padding: 20px;
+    h2 {
+      color: $blue;
+      font-size: 30px;
+    }
+    h5 {
+      color: $blue;
+    }
+    p {
+      color: $blue-gray;
+    }
+  }
+}
+footer {
+  font-size: 12px;
+  border-top: 1px solid #e3e1e1;
+  padding-top: 20px;
+  &>div {
+    padding: 0 20px;
+  }
+}
+/* Page specific stuff */
+.body-29 #content {
+  background: white;
+  padding: 0 20px;
+}
+#post-title-29 {
+  display: none;
+}
+#sidebar {
+  display: none;
+}
+/* Responsive stuff */
+@media (max-width: 767px) {
+  header h1 {
+    font-size: 50px;
+  }
+  header small {
+    font-size: 12px;
+  }
+  header .navigation {
+    padding: 0 20px;
+    nav {
+      ul li {
+        a {
+          margin-bottom: 3px;
+          span.ss-icon {
+            font-size: 18px;
+            width: 5%;
+            top: 0;
+          }
+          span.title  {
+            display: block;
+            left: 10% !important;
+            width: 80%;
+            top: -7px;
+            font-size: 18px;
+            padding: 5px 5%;
+            margin: 0;
+            background: darken($blue, 8%);
+            &:after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              width: 0;
+              height: 0;
+              left: -8px;
+              border-top: 8px solid transparent;
+              border-bottom: 8px solid transparent;
+              border-right: 8px solid darken($blue, 8%);;
+              margin-top: -8px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #content .hero-unit {
+    border: 0;
+    padding: 20px 0 0;
+    h1 {
+      font-size: 30px;
+    }
+    &:before, &.after {
+      display: none;
+    }
+  }
+  #content .row-fluid > div {
+    margin-bottom: 20px;
+  }
+  .body-29 #content .row-fluid > div {
+    margin: 0;
+  }
+  footer p {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #footer-nav {
+    width: 80%;
+    margin: 0 auto;
+    li {
+      float: left;
+      width: 12.5%;
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+}
