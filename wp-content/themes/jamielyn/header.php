@@ -47,11 +47,11 @@ if ($redirect)
 <body class="body-<?php the_ID(); ?>">
   <section id="container" class="container-fluid">
     <header>
-      <div class="row-fluid max960">
-        <div class="span5 logo">
+      <div class="row-fluid max960 pad20">
+        <div class="span7 logo">
           <h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
         </div>
-        <div class="span7 navigation">
+        <div class="span5 navigation">
           <nav id="menu" class="clearfix">
             <?php wp_nav_menu(array( 
               'theme_location'  => 'menu-1',

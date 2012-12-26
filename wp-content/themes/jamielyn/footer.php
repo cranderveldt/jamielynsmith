@@ -1,5 +1,5 @@
       <footer>
-        <div class="row-fluid max960">
+        <div class="row-fluid max960 pad20">
           <div class="span8">
               <p>&copy; Copyright 2012 Trevor Moore&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">Contact Me</a></p>
           </div>

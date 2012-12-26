@@ -2,7 +2,7 @@ $sans: 'Oswald', sans-serif;
 $serif: 'Neuton', serif;
 $green: #029483;
 $green-gray: desaturate(lighten($green, 5%), 35%);
-$white: #f7f7f7;
+$white: #f4f4f4;
 $border: #e9e7e7;
 
 @mixin round($radius) {
@@ -136,11 +136,8 @@ body {
   padding: 20px;
 }
 header {
-  background: $green;
+  background: $white;
   color: white;
-  .max960 {
-    padding: 20px;
-  }
   a {
     color: #464646;
     &:hover {
@@ -155,9 +152,6 @@ header {
     line-height: 1;
     position: relative;
     text-transform: uppercase;
-    a:hover {
-      color: white;
-    }
   }
   small {
     font-size: 13px;
@@ -176,8 +170,9 @@ header {
         display: block;
         font-size: 14px;
         position: relative;
+        text-align: right;
         &:hover {
-          color: #FFF;
+          color: #111;
           span.title {
             display: block;
           }
@@ -218,6 +213,9 @@ header {
   padding: 0;
 }
 #content {
+  .hero {
+    background: $green;
+  }
   .entry {
     margin-bottom: 20px;
   }
@@ -243,83 +241,20 @@ header {
       left: 4px;
     }
   }
-  .hero-unit {
-    padding: 0;
-    background: transparent;
-    border-right: 1px solid $border;
-    padding: 20px 20px 0 0;
-    position: relative;
-    &:before,
-    &:after {
-      content: "";
-      position: absolute;
-      top: 30px;
-      width: 0;
-      height: 0;
-    }
-    &:before {
-      right: -12px;
-      border-top: 12px solid transparent;
-      border-bottom: 12px solid transparent;
-      border-left: 12px solid $border;
-      margin-top: -12px;
-    }
-    &:after {
-      right: -10px;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-left: 10px solid white;
-      margin-top: -10px;
-    }
-    h1 {
-      font-size: 45px;
-      color: $green;
-      font-weight: normal;
-      letter-spacing: 1px;
-      line-height: 1.3;
-    }
-  }
-  .home-side {
-    color: $green-gray;
-    padding: 20px 0 0 0;
-    p {
-      font-size: 16px;
-    }
-  }
-  .recent-projects {
-    background: $white;
-    margin: 0 -20px;
-    padding: 20px;
-    h2 {
-      color: $green;
-      font-size: 30px;
-    }
-    h5 {
-      color: $green;
-    }
-    p {
-      color: $green-gray;
-    }
-  }
+}
+#sidebar {
+  display: none;
 }
 footer {
   font-size: 12px;
   border-top: 1px solid #e3e1e1;
   padding-top: 20px;
-  .max960 {
-    padding: 20px;
-  }
 }
 /* Page specific stuff */
-.body-29 #content {
-  background: white;
-  padding: 0 20px;
-}
-#post-title-29 {
-  display: none;
-}
-#sidebar {
-  display: none;
+.body-2 {
+  h2.page-title {
+    display: none;
+  }
 }
 /* Responsive stuff */
 @media (max-width: 767px) {
