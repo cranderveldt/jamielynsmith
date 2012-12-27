@@ -1,15 +1,15 @@
-      <footer>
-        <div class="row-fluid max960 pad20">
-          <div class="span8">
-              <p>&copy; Copyright 2012 Trevor Moore&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">Contact Me</a></p>
+      <footer class="max960 pad20">
+        <div class="row-fluid">
+          <div class="span7">
+              <p>&copy; Copyright 2012 Jamielyn Smith&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href="">Contact</a></p>
           </div>
-          <div class="span4">
-            <nav id="footer-nav">
+          <div class="span5">
+            <nav id="footer-nav" class="hidden-phone">
               <?php wp_nav_menu(array( 
                 'theme_location'  => 'menu-2',
                 'menu'            => '', 
                 'container'       => false,
-                'menu_class'      => 'menu row-fluid',
+                'menu_class'      => 'menu',
                 'echo'            => true,
                 'fallback_cb'     => 'wp_page_menu',
                 'before'          => '',

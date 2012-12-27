@@ -161,49 +161,20 @@ header {
   }
   nav {
     ul li {
+      display: inline;
       &.menu-item-14 {
         display: none;
       }
       a {
         text-transform: uppercase;
-        font-weight: bold;
+        font-weight: normal;
         display: block;
         font-size: 14px;
         position: relative;
-        text-align: right;
+        float: right;
+        margin-left: 20px;
         &:hover {
-          color: #111;
-          span.title {
-            display: block;
-          }
-        }
-        span.ss-icon {
-          position: relative;
-          top: 3px;
-          font-size: 24px;
-        }
-        span.title {
-          position: absolute;
-          background: darken($green, 15%);
-          @include round(4px);
-          padding: 5px;
-          display: none;
-          top: -40px;
-          left: -50%;
-          margin-left: 26px;
-          color: #FFF;
-          &:after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            width: 0;
-            height: 0;
-            bottom: -8px;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-top: 8px solid darken($green, 15%);;
-            margin-left: -8px;
-          }
+          color: $green;
         }
       }
     }
@@ -215,6 +186,40 @@ header {
 #content {
   .hero {
     background: $green;
+    .cycle-slideshow {
+      position: relative;
+      nav {
+        position: absolute;
+        top: 50%;
+        color: #FFF;
+        opacity: .4;
+        font-size: 40px;
+        z-index: 1000;
+        cursor: pointer;
+        margin-top: -20px;
+        &:hover {
+          opacity: 1;
+        }
+        &.cycle-next {
+          right: 20px;
+        }
+        &.cycle-prev {
+          left: 20px;
+        }
+      }
+      .cycle-pager {
+        opacity: .4;
+        font-size: 12px;
+        span {
+          color: $green;
+          margin-right: 10px;
+          text-shadow: 0 0 2px white, 0 0 2px white, 0 0 2px white; 
+          &.cycle-pager-active {
+            color: white;
+          }
+        }
+      }
+    }
   }
   .entry {
     margin-bottom: 20px;
@@ -249,14 +254,51 @@ footer {
   font-size: 12px;
   border-top: 1px solid #e3e1e1;
   padding-top: 20px;
+  text-transform: uppercase;
+  a {
+    color: #464646;
+    &:hover {
+      color: $green;
+    }
+  }
+}
+#footer-nav {
+  ul li {
+    display: inline;
+    a {
+      float: right;
+      margin-left: 20px;
+    }
+  }
 }
 /* Page specific stuff */
 .body-2 {
-  h2.page-title {
+  .post-title {
     display: none;
   }
 }
 /* Responsive stuff */
 @media (max-width: 767px) {
-  
+  header {
+    .pad20 {
+      padding: 0;
+    }
+    h1 {
+      font-size: 45px;
+      text-align: center;
+      padding-bottom: 20px;
+      box-shadow: 0 5px 10px #E7E7E7;
+      margin-bottom: 20px;
+    }
+    nav {
+      ul li {
+        a {
+          width: 33%;
+          margin: 0;
+          text-align: center;
+          font-size: 17px;
+        }
+      }
+    }
+  }
 }

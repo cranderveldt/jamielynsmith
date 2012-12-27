@@ -73,17 +73,22 @@ header a { color: #464646; }
 header a:hover { color: #111; }
 header h1 { font-family: "Oswald", sans-serif; font-weight: normal; font-size: 28px; margin: 0; line-height: 1; position: relative; text-transform: uppercase; }
 header small { font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+header nav ul li { display: inline; }
 header nav ul li.menu-item-14 { display: none; }
-header nav ul li a { text-transform: uppercase; font-weight: bold; display: block; font-size: 14px; position: relative; text-align: right; }
-header nav ul li a:hover { color: #111; }
-header nav ul li a:hover span.title { display: block; }
-header nav ul li a span.ss-icon { position: relative; top: 3px; font-size: 24px; }
-header nav ul li a span.title { position: absolute; background: #014940; -webkit-border-radius: 4px; border-radius: 4px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; padding: 5px; display: none; top: -40px; left: -50%; margin-left: 26px; color: #FFF; }
-header nav ul li a span.title:after { content: ""; position: absolute; left: 50%; width: 0; height: 0; bottom: -8px; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 8px solid #014940; margin-left: -8px; }
+header nav ul li a { text-transform: uppercase; font-weight: normal; display: block; font-size: 14px; position: relative; float: right; margin-left: 20px; }
+header nav ul li a:hover { color: #029483; }
 
 #container { padding: 0; }
 
 #content .hero { background: #029483; }
+#content .hero .cycle-slideshow { position: relative; }
+#content .hero .cycle-slideshow nav { position: absolute; top: 50%; color: #FFF; opacity: .4; font-size: 40px; z-index: 1000; cursor: pointer; margin-top: -20px; }
+#content .hero .cycle-slideshow nav:hover { opacity: 1; }
+#content .hero .cycle-slideshow nav.cycle-next { right: 20px; }
+#content .hero .cycle-slideshow nav.cycle-prev { left: 20px; }
+#content .hero .cycle-slideshow .cycle-pager { opacity: .4; font-size: 12px; }
+#content .hero .cycle-slideshow .cycle-pager span { color: #029483; margin-right: 10px; text-shadow: 0 0 2px white, 0 0 2px white, 0 0 2px white; }
+#content .hero .cycle-slideshow .cycle-pager span.cycle-pager-active { color: white; }
 #content .entry { margin-bottom: 20px; }
 #content h2 { font-size: 30px; color: #029483; }
 #content h5 { color: #029483; }
@@ -94,9 +99,17 @@ header nav ul li a span.title:after { content: ""; position: absolute; left: 50%
 
 #sidebar { display: none; }
 
-footer { font-size: 12px; border-top: 1px solid #e3e1e1; padding-top: 20px; }
+footer { font-size: 12px; border-top: 1px solid #e3e1e1; padding-top: 20px; text-transform: uppercase; }
+footer a { color: #464646; }
+footer a:hover { color: #029483; }
+
+#footer-nav ul li { display: inline; }
+#footer-nav ul li a { float: right; margin-left: 20px; }
 
 /* Page specific stuff */
-.body-2 h2.page-title { display: none; }
+.body-2 .post-title { display: none; }
 
 /* Responsive stuff */
+@media (max-width: 767px) { header .pad20 { padding: 0; }
+  header h1 { font-size: 45px; text-align: center; padding-bottom: 20px; box-shadow: 0 5px 10px #E7E7E7; margin-bottom: 20px; }
+  header nav ul li a { width: 33%; margin: 0; text-align: center; font-size: 17px; } }
