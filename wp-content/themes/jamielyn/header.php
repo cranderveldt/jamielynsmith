@@ -36,10 +36,11 @@ if ($redirect)
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
   <link href='http://fonts.googleapis.com/css?family=Neuton:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-  <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/script.js"></script>
-  <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/symbolset.js"></script>
+  <!-- <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/symbolset.js"></script> -->
   <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/jquery.cycle2.min.js"></script>
   <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/jquery.cycle2.swipe.min.js"></script>
+  <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/plugins.js"></script>
+  <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/script.js"></script>
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
