@@ -1,7 +1,8 @@
 $sans: 'Oswald', sans-serif;
 $serif: 'Neuton', serif;
 $green: #029483;
-$green-gray: desaturate(lighten($green, 5%), 35%);
+$blue: #0080d3;
+$orange: #d25135;
 $white: #f4f4f4;
 $border: #e9e7e7;
 
@@ -274,6 +275,45 @@ header {
       }
     }
   }
+  .touts {
+    .span4 {
+      position: relative;
+      font-size: 20px;
+      line-height: 1;
+      img {
+        margin-bottom: -7px;
+      }
+      a {
+        display: none;
+      }
+      &:hover {
+        img {
+          visibility: hidden;
+        }
+        a {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          height: 10%;
+          padding: 28.5% 0;
+          color: white;
+          text-transform: uppercase;
+        }
+      }
+      &.design a {
+        background: $green;
+      }
+      &.photography a {
+        background: $blue;
+      }
+      &.resume a {
+        background: $orange;
+      }
+    }
+  }
   .entry {
     margin-bottom: 20px;
   }
@@ -283,9 +323,6 @@ header {
   }
   h5 {
     color: $green;
-  }
-  p {
-    color: $green-gray;
   }
   a.more {
     font-size: 14px;
