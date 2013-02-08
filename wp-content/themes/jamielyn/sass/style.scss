@@ -405,6 +405,9 @@ footer {
 }
 /* Responsive stuff */
 @media (max-width: 767px) {
+  .mobile-pad20 {
+    padding: 20px;
+  }
   header {
     position: relative;
     height: auto;

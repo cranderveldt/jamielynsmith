@@ -10,10 +10,10 @@
                     </div>
                     <div class="span4">
             <?php } ?>
-            <h2 id="post-title-<?php the_ID(); ?>">
+            <h2 id="post-title-<?php the_ID(); ?>" class="mobile-pad20">
                 <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent link to'); ?> <?php the_title(); ?>"><?php the_title(); ?></a>
             </h2>
-            <div class="post row-fluid post-meta hidden" id="post-meta-<?php the_ID(); ?>">
+            <div class="post row-fluid post-meta hidden mobile-pad20" id="post-meta-<?php the_ID(); ?>">
                 <div class="span12">
                 <p>
                     <span class="post-date">Posted on <?php the_time('j M, Y') ?></span>&nbsp;
@@ -22,7 +22,9 @@
                 </p>
                 </div>
             </div>
-            <?php the_content(__('Read the rest of this entry &raquo;')); ?>
+            <div class="mobile-pad20">
+                <?php the_content(__('Read the rest of this entry &raquo;')); ?>
+            </div>
             <?php if ( has_post_thumbnail() ) { ?>
                     </div>
             <?php } ?>

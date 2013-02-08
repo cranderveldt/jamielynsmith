@@ -132,7 +132,8 @@ footer a:hover { color: #029483; }
 .body-2 .post-title { display: none; }
 
 /* Responsive stuff */
-@media (max-width: 767px) { header { position: relative; height: auto; }
+@media (max-width: 767px) { .mobile-pad20 { padding: 20px; }
+  header { position: relative; height: auto; }
   header .pad20 { padding: 0; }
   header h1 a { padding: 20px; -webkit-box-shadow: 0 5px 10px #E7E7E7; box-shadow: 0 5px 10px #E7E7E7; background-position: center center; width: auto; height: 33px; background-size: 290px 33px; margin: 0 0 20px; }
   header nav { top: 0; margin-bottom: 8px; }
