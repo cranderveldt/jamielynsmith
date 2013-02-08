@@ -42,7 +42,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 blockquote p { line-height: 2em; }
 
 a { color: #029483; text-decoration: none; }
-a:hover { color: #1afce2; text-decoration: none; }
+a:hover { color: #999; text-decoration: none; }
 
 h1 { font-size: 36px; margin-bottom: 15px; font-family: "Neuton", serif; }
 
@@ -96,22 +96,28 @@ header nav ul li a:hover { color: #029483; }
 #content .hero .slideshow .pager span { background: transparent; display: inline-block; width: 12px; height: 12px; -webkit-border-radius: 6px; border-radius: 6px; -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; margin-right: 10px; -webkit-box-shadow: 0 0 2px white, 0 0 2px white, 0 0 2px white; box-shadow: 0 0 2px white, 0 0 2px white, 0 0 2px white; cursor: pointer; }
 #content .hero .slideshow .pager span:hover { background: rgba(255, 255, 255, 0.5); }
 #content .hero .slideshow .pager span.cycle-pager-active { background: white; }
-#content .touts .span4 { position: relative; font-size: 20px; line-height: 1; }
+#content .touts .span4 { position: relative; font-size: 20px; line-height: 1; margin-bottom: 25px; }
 #content .touts .span4 img { margin-bottom: -7px; }
 #content .touts .span4 a { display: none; }
 #content .touts .span4:hover img { visibility: hidden; }
 #content .touts .span4:hover a { display: block; position: absolute; top: 0; left: 0; width: 100%; text-align: center; height: 10%; padding: 28.5% 0; color: white; text-transform: uppercase; }
-#content .touts .span4.design a { background: #029483; }
-#content .touts .span4.photography a { background: #0080d3; }
-#content .touts .span4.resume a { background: #d25135; }
+#content .touts .span4.green a { background: #029483; }
+#content .touts .span4.blue a { background: #0080d3; }
+#content .touts .span4.orange a { background: #d25135; }
+#content .touts .span4.magenta a { background: #9f2f5d; }
 #content .entry { margin-bottom: 20px; }
 #content h2 { font-size: 30px; color: #029483; }
+#content h2.banner { background: #029483; color: #FFF; text-align: center; padding: 15px 0; margin: 0; }
 #content h5 { color: #029483; }
 #content a.more { font-size: 14px; }
 #content a.more span.ss-icon { font-size: 8px; top: 0; margin-left: 4px; -webkit-transition: left 0.1s linear; -moz-transition: left 0.1s linear; -o-transition: left 0.1s linear; transition: left 0.1s linear; }
 #content a.more:hover span.ss-icon { left: 4px; }
 
 #sidebar { display: none; }
+
+ul.project { border-top: 1px dashed #9d9d9d; font-family: "Neuton", serif; font-weight: normal; }
+ul.project li { padding: 10px 0; border-bottom: 1px dashed #9d9d9d; font-size: 16px; }
+ul.project li span.title { font-family: "Oswald", sans-serif; font-size: 13px; text-transform: uppercase; color: #898989; margin-right: 5px; }
 
 footer { font-size: 12px; padding-top: 20px; text-transform: uppercase; }
 footer .foot-case { border-top: 1px solid #464646; padding-top: 4px; }

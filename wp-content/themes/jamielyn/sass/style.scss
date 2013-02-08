@@ -5,6 +5,7 @@ $blue: #0080d3;
 $orange: #d25135;
 $white: #f4f4f4;
 $border: #e9e7e7;
+$magenta: #9f2f5d;
 
 @mixin round($radius) {
   -webkit-border-radius: $radius; 
@@ -108,7 +109,7 @@ a {
   color: $green;
   text-decoration: none; 
   &:hover {
-    color: lighten($green, 25%);
+    color: #999;
     text-decoration: none;
   }
 }
@@ -280,6 +281,7 @@ header {
       position: relative;
       font-size: 20px;
       line-height: 1;
+      margin-bottom: 25px;
       img {
         margin-bottom: -7px;
       }
@@ -303,14 +305,17 @@ header {
           text-transform: uppercase;
         }
       }
-      &.design a {
+      &.green a {
         background: $green;
       }
-      &.photography a {
+      &.blue a {
         background: $blue;
       }
-      &.resume a {
+      &.orange a {
         background: $orange;
+      }
+      &.magenta a {
+        background: $magenta;
       }
     }
   }
@@ -320,6 +325,13 @@ header {
   h2 {
     font-size: 30px;
     color: $green;
+  }
+  h2.banner {
+    background: $green;
+    color: #FFF;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
   }
   h5 {
     color: $green;
@@ -339,6 +351,23 @@ header {
 }
 #sidebar {
   display: none;
+}
+ul.project {
+  border-top: 1px dashed #9d9d9d;
+  font-family: $serif;
+  font-weight: normal;
+  li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #9d9d9d;
+    font-size: 16px;
+    span.title {
+      font-family: $sans;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: #898989;
+      margin-right: 5px;
+    }
+  }
 }
 footer {
   font-size: 12px;

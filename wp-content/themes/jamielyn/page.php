@@ -5,7 +5,9 @@
         <?php if (!is_page('Blog')) { ?>
         <div class="post row-fluid post-title" id="post-title-<?php the_ID(); ?>">
             <div class="span12">
-                <h2 class="page-title"><?php the_title(); ?></h2>
+                <div class="max960">
+                    <h2 class="page-title banner"><?php the_title(); ?></h2>
+                </div>
             </div>
         </div>
         <?php } ?>

@@ -41,5 +41,5 @@ function register_my_menus() {
 remove_filter('the_content', 'wptexturize');
 remove_filter('the_excerpt', 'wptexturize');
 remove_filter('comment_text', 'wptexturize');
-
+add_theme_support( 'post-thumbnails' ); 
 ?>

@@ -2,23 +2,30 @@
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <div class="post row-fluid post-title" id="post-title-<?php the_ID(); ?>">
-            <div class="span12">
-                <h2>
-                    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent link to'); ?> <?php the_title(); ?>"><?php the_title(); ?></a>
-                </h2>
+        <div class="post post-entry max960" id="post-<?php the_ID(); ?>">
+            <?php if ( has_post_thumbnail() ) { ?>
+                <div class="row-fluid">
+                    <div class="span8">
+                <?php the_post_thumbnail('full'); ?>
+                    </div>
+                    <div class="span4">
+            <?php } ?>
+            <h2 id="post-title-<?php the_ID(); ?>">
+                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent link to'); ?> <?php the_title(); ?>"><?php the_title(); ?></a>
+            </h2>
+            <div class="post row-fluid post-meta hidden" id="post-meta-<?php the_ID(); ?>">
+                <div class="span12">
+                <p>
+                    <span class="post-date">Posted on <?php the_time('j M, Y') ?></span>&nbsp;
+                    <span class="post-cate">in <?php the_category(', ') ?></span>&nbsp;
+                    <?php edit_post_link(__('Edit'), ' &#183; ', ''); ?>
+                </p>
+                </div>
             </div>
-        </div>
-        <div class="post row-fluid post-meta" id="post-meta-<?php the_ID(); ?>">
-            <p>
-                <span class="post-date">Posted on <?php the_time('j M, Y') ?></span>&nbsp;
-                <span class="post-cate">in <?php the_category(', ') ?></span>&nbsp;&bull;
-                <span class="post-tags">Tags: <?php the_tags('', ' ',''); ?></span>
-                <?php edit_post_link(__('Edit'), ' &#183; ', ''); ?>
-            </p>
-        </div>
-        <div class="post post-entry" id="post-<?php the_ID(); ?>">
             <?php the_content(__('Read the rest of this entry &raquo;')); ?>
+            <?php if ( has_post_thumbnail() ) { ?>
+                    </div>
+            <?php } ?>
             <?php wp_link_pages(); ?>
         </div>
 
