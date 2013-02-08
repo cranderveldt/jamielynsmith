@@ -82,7 +82,7 @@ header nav ul li a:hover { color: #029483; }
 #container { padding: 0; }
 
 #content { padding-top: 70px; }
-#content .hero { background: #029483; height: 600px; overflow: hidden; }
+#content .hero { background: #333; height: 600px; overflow: hidden; }
 #content .hero .span12 { height: 100%; }
 #content .hero img { width: 100%; height: auto; max-width: none; position: relative; }
 #content .hero .slideshow { position: relative; height: 100%; }
