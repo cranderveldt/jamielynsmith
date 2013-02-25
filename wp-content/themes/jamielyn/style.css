@@ -68,7 +68,9 @@ body { background: #f4f4f4; font-family: "Oswald", sans-serif; font-size: 16px; 
 
 .pad20 { padding: 20px; }
 
-header { background: #f4f4f4; color: white; position: fixed; width: 100%; height: 70px; left: 0; top: 0; z-index: 1001; }
+header { background: #f4f4f4; color: white; position: fixed; height: 72px; width: 100%; left: 0; top: 0; z-index: 1001; border-bottom: 1px dashed #a3a3a3; }
+header .wrap { margin-bottom: 2px; border-bottom: 1px solid #464646; }
+header .pad20 { height: 28px; }
 header a { color: #464646; }
 header a:hover { color: #111; }
 header h1 a { display: block; font-family: "Oswald", sans-serif; font-weight: normal; margin: 0; line-height: 1; position: relative; text-transform: uppercase; font-size: 0px; text-indent: -999%; width: 250px; height: 28px; background: transparent url("images/logo.png") 0 0 no-repeat; background-size: 250px 28px; }
@@ -76,12 +78,13 @@ header small { font-size: 13px; font-weight: bold; text-transform: uppercase; le
 header nav { position: relative; top: 12px; }
 header nav ul li { display: inline; }
 header nav ul li.menu-item-14 { display: none; }
+header nav ul li.current-menu-item a { color: #029483; }
 header nav ul li a { text-transform: uppercase; font-weight: normal; display: block; font-size: 14px; position: relative; float: right; margin-left: 20px; }
 header nav ul li a:hover { color: #029483; }
 
 #container { padding: 0; }
 
-#content { padding-top: 70px; }
+#content { padding-top: 100px; }
 #content .hero { background: #333; height: 600px; overflow: hidden; }
 #content .hero .span12 { height: 100%; }
 #content .hero img { width: auto; height: 100%; max-width: none; position: relative; }
@@ -131,15 +134,20 @@ footer a:hover { color: #029483; }
 
 /* Page specific stuff */
 .body-2 .post-title { display: none; }
+.body-2 #content { padding-top: 68px; }
+.body-2 header { border-bottom: 0; height: 68px; }
+.body-2 header .wrap { margin-bottom: 0; border-bottom: 0; }
 
 /* Responsive stuff */
 @media (max-width: 767px) { .mobile-pad20 { padding: 20px; }
-  header { position: relative; height: auto; }
+  header { position: relative; height: 130px; border: 0; }
   header .pad20 { padding: 0; }
+  header .wrap { margin: 0; border: 0; }
   header h1 a { padding: 20px; -webkit-box-shadow: 0 5px 10px #E7E7E7; box-shadow: 0 5px 10px #E7E7E7; background-position: center center; width: auto; height: 33px; background-size: 290px 33px; margin: 0 0 20px; }
   header nav { top: 0; margin-bottom: 8px; }
   header nav ul li a { width: 33%; margin: 0; text-align: center; font-size: 17px; }
   #content { padding-top: 0; }
+  #content h2.banner { margin: 0 20px; }
   #content .hero { height: 450px; }
   #content .hero .slideshow .slide-image { background-size: auto 450px; }
   #content .hero .slideshow .slide-wrapper { background-size: auto 450px; }
