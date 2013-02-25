@@ -3,7 +3,7 @@ jQuery(document).ready(function($){
   $('.slideshow').on('cycle-pre-initialize', function(e, opts) {
     $('.hero .pager').css('marginLeft','-' + $('.hero .pager').width()/2 + 'px');
     $('.slideshow .slide img').each(function(){
-      $(this).after('<div class="slide-image" style="background-image: url(' + $(this).attr('src') + ')"></div>');
+      $(this).after('<div class="slide-wrapper" style="background-image: url(' + $(this).data('bg') + ')"><div class="slide-image" style="background-image: url(' + $(this).prop('src') + ')"></div></div>');
       $(this).remove();
     });
     console.log('initialized');

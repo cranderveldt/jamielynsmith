@@ -211,8 +211,8 @@ header {
       height: 100%;
     }
     img {
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 100%;
       max-width: none;
       position: relative;
     }
@@ -246,7 +246,11 @@ header {
         width: 100%;
         height: 100%;
         background: transparent url() center center no-repeat;
-        background-size: cover;
+      }
+      .slide-wrapper {
+        background: transparent url() 0 0 repeat;
+        width: 100%;
+        height: 100%;
       }
       .pager {
         opacity: .7;
@@ -443,6 +447,14 @@ footer {
     padding-top: 0;
     .hero {
       height: 450px;
+      .slideshow {
+        .slide-image {
+          background-size: auto 450px;
+        }
+        .slide-wrapper {
+          background-size: auto 450px;
+        }
+      }
     }
     .touts {
       .span4 {
@@ -455,6 +467,14 @@ footer {
   #content {
     .hero {
       height: 250px;
+      .slideshow {
+        .slide-image {
+          background-size: auto 250px;
+        }
+        .slide-wrapper {
+          background-size: auto 250px;
+        }
+      }
     }
   }
 }
