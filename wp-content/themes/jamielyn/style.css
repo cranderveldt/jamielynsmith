@@ -46,13 +46,13 @@ a:hover { color: #999; text-decoration: none; }
 
 h1 { font-size: 36px; margin-bottom: 15px; font-family: "Neuton", serif; }
 
-h2 { font-size: 28px; margin-bottom: 15px; font-family: "Neuton", serif; }
+h2 { font-size: 32px; margin-bottom: 15px; font-family: "Neuton", serif; }
 
 h3 { font-size: 24px; margin-bottom: 5px; }
 
 h4 { font-size: 20px; }
 
-h5 { font-size: 16px; text-transform: uppercase; margin-bottom: 5px; }
+h5 { font-size: 18px; text-transform: uppercase; margin-bottom: 5px; }
 
 h6 { font-size: 14px; }
 
@@ -68,7 +68,8 @@ body { background: #f4f4f4; font-family: "Oswald", sans-serif; font-size: 16px; 
 
 .pad20 { padding: 20px; }
 
-header { background: #f4f4f4; color: white; position: fixed; height: 72px; width: 100%; left: 0; top: 0; z-index: 1001; border-bottom: 1px dashed #a3a3a3; }
+header { background: rgba(246,246,246, 0.90); color: white; position: fixed; height: 72px; width: 100%; left: 0; top: 0; z-index: 1001;
+border-bottom: 1px dashed #a3a3a3; }
 header .wrap { margin-bottom: 2px; border-bottom: 1px solid #464646; }
 header .pad20 { height: 28px; }
 header a { color: #464646; }
@@ -78,9 +79,10 @@ header small { font-size: 13px; font-weight: bold; text-transform: uppercase; le
 header nav { position: relative; top: 12px; }
 header nav ul li { display: inline; }
 header nav ul li.menu-item-14 { display: none; }
-header nav ul li.current-menu-item a { color: #029483; }
+header nav ul li.current-menu-item a { color: #464646; }
 header nav ul li a { text-transform: uppercase; font-weight: normal; display: block; font-size: 14px; position: relative; float: right; margin-left: 20px; }
 header nav ul li a:hover { color: #029483; }
+opacity: 1
 
 #container { padding: 0; }
 
@@ -102,7 +104,7 @@ header nav ul li a:hover { color: #029483; }
 #content .hero .slideshow .pager span.cycle-pager-active { background: white; }
 #content .touts .span4 { position: relative; font-size: 20px; line-height: 1; margin-bottom: 25px; }
 #content .touts .span4 img { margin-bottom: -7px; }
-#content .touts .span4 a { display: none; }
+#content .touts .span4 a { display: none; letter-spacing: 1px; }
 #content .touts .span4:hover img { visibility: hidden; }
 #content .touts .span4:hover a { display: block; position: absolute; top: 0; left: 0; width: 100%; text-align: center; height: 10%; padding: 28.5% 0; color: white; text-transform: uppercase; }
 #content .touts .span4.green a { background: #029483; }
@@ -110,7 +112,7 @@ header nav ul li a:hover { color: #029483; }
 #content .touts .span4.orange a { background: #d25135; }
 #content .touts .span4.magenta a { background: #9f2f5d; }
 #content .entry { margin-bottom: 20px; }
-#content h2 { font-size: 30px; color: #029483; }
+#content h2 { font-size: 30px; color: #029483; line-height: 1 }
 #content h2.banner { background: #029483; color: #FFF; text-align: center; padding: 15px 0; margin: 0; }
 #content h5 { color: #029483; }
 #content a.more { font-size: 14px; }
@@ -118,9 +120,10 @@ header nav ul li a:hover { color: #029483; }
 #content a.more:hover span.ss-icon { left: 4px; }
 
 #sidebar { display: none; }
+#sticky-sidebar { position: fixed; top: 92px; left: 0; width: 100%; }
 
 ul.project { border-top: 1px dashed #9d9d9d; font-family: "Neuton", serif; font-weight: normal; }
-ul.project li { padding: 10px 0; border-bottom: 1px dashed #9d9d9d; font-size: 16px; }
+ul.project li { padding: 10px 0; border-bottom: 1px dashed #9d9d9d; font-size: 18px; }
 ul.project li span.title { font-family: "Oswald", sans-serif; font-size: 13px; text-transform: uppercase; color: #898989; margin-right: 5px; }
 
 footer { font-size: 12px; padding-top: 20px; text-transform: uppercase; }
@@ -146,6 +149,7 @@ footer a:hover { color: #029483; }
   header h1 a { padding: 20px; -webkit-box-shadow: 0 5px 10px #E7E7E7; box-shadow: 0 5px 10px #E7E7E7; background-position: center center; width: auto; height: 33px; background-size: 290px 33px; margin: 0 0 20px; }
   header nav { top: 0; margin-bottom: 8px; }
   header nav ul li a { width: 33%; margin: 0; text-align: center; font-size: 17px; }
+  #sticky-sidebar { position: static; width: auto; top: 0; left: 0; }
   #content { padding-top: 0; }
   #content h2.banner { margin: 0 20px; }
   #content .hero { height: 450px; }

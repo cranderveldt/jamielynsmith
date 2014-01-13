@@ -6,7 +6,6 @@ jQuery(document).ready(function($){
       $(this).after('<div class="slide-wrapper" style="background-image: url(' + $(this).data('bg') + ')"><div class="slide-image" style="background-image: url(' + $(this).prop('src') + ')"></div></div>');
       $(this).remove();
     });
-    console.log('initialized');
   });
   $('.slideshow').cycle({
     slides: '>.slide',
@@ -17,4 +16,17 @@ jQuery(document).ready(function($){
     pager: '>.pager',
     fx: 'scrollHorz'
   });
+  if ($('#sticky-sidebar').length > 0) {
+    $('#sticky-sidebar-target').html($('#single-sidebar').html());
+    $(window).scroll(function(){
+      var scrollY = $(window).scrollTop();
+      if (scrollY >= 24) {
+        $('#sticky-sidebar').show();
+        $('#single-sidebar').hide();
+      } else {
+        $('#sticky-sidebar').hide();
+        $('#single-sidebar').show();
+      }
+    });
+  }
 });

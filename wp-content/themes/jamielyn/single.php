@@ -8,10 +8,10 @@
                     <div class="span8">
                 <?php the_post_thumbnail('full'); ?>
                     </div>
-                    <div class="span4">
+                    <div id="single-sidebar" class="span4">
             <?php } ?>
             <h2 id="post-title-<?php the_ID(); ?>" class="mobile-pad20">
-                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent link to'); ?> <?php the_title(); ?>"><?php the_title(); ?></a>
+            <?php the_title(); ?>
             </h2>
             <div class="post row-fluid post-meta hidden mobile-pad20" id="post-meta-<?php the_ID(); ?>">
                 <div class="span12">
@@ -26,10 +26,19 @@
                 <?php the_content(__('Read the rest of this entry &raquo;')); ?>
             </div>
             <?php if ( has_post_thumbnail() ) { ?>
-                    </div>
+                    </div><!--/#single-sidebar-->
+                </div><!--/.row-fluid-->
+                <div id="sticky-sidebar" style="display: none;">
+                    <div class="max960">
+                        <div class="row-fluid">
+                            <div class="offset8 span4" id="sticky-sidebar-target">
+                            </div><!--/.span4-->
+                        </div><!--/.row-fluid-->
+                    </div><!--/.max960-->
+                </div><!--/#single-sidebar-->
             <?php } ?>
             <?php wp_link_pages(); ?>
-        </div>
+        </div><!--/.post-entry-->
 
         <div class="comments" style="display: none;">
             <?php comments_template(); ?>
@@ -44,5 +53,4 @@
     <?php endif; ?>
 
 <?php get_sidebar(); ?>
-
 <?php get_footer(); ?>

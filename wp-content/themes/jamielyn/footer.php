@@ -2,7 +2,7 @@
         <div class="foot-case">
           <div class="row-fluid">
             <div class="span7">
-                <p>&copy; Copyright 2012 Jamielyn Smith&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href="">Contact</a></p>
+                <p>&copy; Copyright 2014 Jamielyn Smith&nbsp;&nbsp;</a></p>
             </div>
             <div class="span5">
               <nav id="footer-nav" class="hidden-phone">
