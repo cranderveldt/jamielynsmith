@@ -1,17 +1,91 @@
-<?php
-/**
- * Front to the WordPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
- *
- * @package WordPress
- */
+<?php get_header(); ?>
 
-/**
- * Tells WordPress to load the WordPress theme and output it.
- *
- * @var bool
- */
-define('WP_USE_THEMES', true);
+    <?php if (have_posts()) : ?>
+<!--stuff goes here -->
+        <?php $post = $posts[0]; // Thanks Kubrick for this code ?>
 
-/** Loads the WordPress Environment and Template */
-require( dirname( __FILE__ ) . '/wp-blog-header.php' );
+        <?php if (is_category()) { ?>
+        <div class="page-title">
+            <h2 class="page-title-border"><?php echo single_cat_title(); ?></h2>
+        </div>
+        <div id="top-sidebar">
+            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Top Sidebar') ) : ?>
+            <?php endif; ?>
+        </div>
+        <?php } elseif (is_tag()) { ?>
+        <div class="page-title">
+            <h2 class="page-title-border"><?php _e('Tag Archive for'); ?> <?php echo single_tag_title(); ?></h2>
+        </div>
+           <?php } elseif (is_day()) { ?>
+        <div class="page-title">
+            <h2 class="page-title-border"><?php _e('Archive for'); ?> <?php the_time('F j, Y'); ?></h2>
+        </div>
+         <?php } elseif (is_month()) { ?>
+        <div class="page-title">
+            <h2 class="page-title-border"><?php _e('Archive for'); ?> <?php the_time('F, Y'); ?></h2>
+        </div>
+        <?php } elseif (is_year()) { ?>
+        <div class="page-title">
+            <h2 class="page-title-border"><?php _e('Archive for'); ?> <?php the_time('Y'); ?></h2>
+        </div>
+        <?php } elseif (is_author()) { ?>
+        <div class="page-title">
+            <h2 class="page-title-border"><?php _e('Author Archive'); ?></h2>
+        </div>
+        <?php } elseif (is_search()) { ?>
+        <div class="page-title">
+            <h2 class="page-title-border"><?php _e('Search Results'); ?></h2>
+        </div>
+        <?php } ?>
+
+
+        <?php while (have_posts()) : the_post(); ?>
+
+            <div class="post row-fluid post-title" id="post-title-<?php the_ID(); ?>">
+                <div class="span12">
+                    <h2>
+                        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Permanent link to'); ?> <?php the_title(); ?>"><?php the_title(); ?></a>
+                    </h2>
+                </div>
+            </div>
+            <div class="post row-fluid post-meta" id="post-meta-<?php the_ID(); ?>">
+                <div class="span12">
+                    <p>
+                        <span class="post-date">Posted on <?php the_time('j M, Y') ?></span>&nbsp;&bull;
+                        <span class="post-tags">Tags: <?php the_tags('', ' ',''); ?></span>&nbsp;&bull;
+                        <span class="post-cmts"><?php comments_popup_link(__('Post a Comment'), __('1 Comment'), __('% Comments'), 'commentslink', __('Comments off')); ?></span>
+                        <?php edit_post_link(__('Edit'), ' &#183; ', ''); ?>
+                    </p>
+                </div>
+            </div>
+            <div class="post" id="post-<?php the_ID(); ?>">
+                <?php if (is_search()) { ?>
+                    <?php the_excerpt() ?>
+                <?php } else { ?>
+                    <?php the_content(__('Read the rest of this entry &raquo;')); ?>
+                <?php } ?>
+            </div>
+
+        <?php endwhile; ?>
+        
+        <?php if(function_exists('wp_pagenavi')) : ?>
+            <?php wp_pagenavi(); ?>
+        <?php else : ?>
+            <div class="paged">
+                <span class="alignleft"><?php previous_posts_link('&laquo; Newer Entries') ?></span>
+                <span class="alignright"><?php next_posts_link('Older Entries &raquo;') ?></span>
+            </div>
+        <?php endif; ?>
+
+    <?php else : ?>
+
+        <div class="post row-fluid title">
+            <div class="span12"><h2><?php _e('Error 404 - Not Found'); ?></h2></div>
+        </div>
+
+    <?php endif; ?>
+
+
+<?php get_sidebar(); ?>
+
+<?php get_footer(); ?>
