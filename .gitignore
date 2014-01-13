@@ -9,6 +9,7 @@ lib-cov
 *.psd
 
 .DS_Store
+.sass-cache
 
 pids
 logs
